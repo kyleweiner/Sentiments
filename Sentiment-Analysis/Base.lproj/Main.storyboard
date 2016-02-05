@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Sentiment Analysis View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SentimentAnalysisViewController" customModule="Sentiment_Analysis" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1a1-CN-emC">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j7n-AA-Kew" customClass="SentimentAnalysisHeaderView" customModule="Sentiment_Analysis" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_sentiments" translatesAutoresizingMaskIntoConstraints="NO" id="N7T-zr-LmA">
+                                                <rect key="frame" x="260" y="15" width="80" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="JYi-Z8-bgg"/>
+                                                    <constraint firstAttribute="height" constant="30" id="Muq-HT-hJb"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="N7T-zr-LmA" firstAttribute="centerY" secondItem="j7n-AA-Kew" secondAttribute="centerY" id="Fsr-Zt-bO3"/>
+                                            <constraint firstAttribute="height" constant="60" id="gEk-Xt-1bv"/>
+                                            <constraint firstItem="N7T-zr-LmA" firstAttribute="centerX" secondItem="j7n-AA-Kew" secondAttribute="centerX" id="how-z0-gZ1"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="sentimentIcon" destination="N7T-zr-LmA" id="C3r-hh-8gj"/>
+                                        </connections>
+                                    </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VIe-OG-iCj" customClass="SentimentAnalysisTextView" customModule="Sentiment_Analysis" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="60" width="600" height="480"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1FV-p7-jby" customClass="SentimentAnalysisFooterView" customModule="Sentiment_Analysis" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="540" width="600" height="60"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="v1h-Gq-AHi">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CyT-fl-plo" customClass="AppButton" customModule="Sentiment_Analysis" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="60" id="ag7-ty-C9c"/>
+                                                            <constraint firstAttribute="height" constant="60" id="spg-yU-FuY"/>
+                                                        </constraints>
+                                                        <state key="normal" image="button_more"/>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_sentiment_positive" translatesAutoresizingMaskIntoConstraints="NO" id="GRG-oc-1ln">
+                                                        <rect key="frame" x="270" y="0.0" width="60" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="2ji-Cd-KjK"/>
+                                                            <constraint firstAttribute="width" constant="60" id="It3-pd-Hf3"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUE-iE-5N1" customClass="AppButton" customModule="Sentiment_Analysis" customModuleProvider="target">
+                                                        <rect key="frame" x="540" y="0.0" width="60" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="60" id="H74-EA-WQO"/>
+                                                            <constraint firstAttribute="height" constant="60" id="MRN-LG-Sdf"/>
+                                                        </constraints>
+                                                        <state key="normal" image="button_check"/>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="CyT-fl-plo" firstAttribute="top" secondItem="v1h-Gq-AHi" secondAttribute="top" id="BFQ-1n-Ifz"/>
+                                                    <constraint firstItem="pUE-iE-5N1" firstAttribute="top" secondItem="v1h-Gq-AHi" secondAttribute="top" id="zgJ-28-X6y"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="JvT-B1-VeA"/>
+                                            <constraint firstItem="v1h-Gq-AHi" firstAttribute="centerY" secondItem="1FV-p7-jby" secondAttribute="centerY" id="Pcu-v0-uWt"/>
+                                            <constraint firstItem="v1h-Gq-AHi" firstAttribute="height" secondItem="1FV-p7-jby" secondAttribute="height" id="bM6-rI-tk2"/>
+                                            <constraint firstItem="v1h-Gq-AHi" firstAttribute="centerX" secondItem="1FV-p7-jby" secondAttribute="centerX" id="roj-oo-pbt"/>
+                                            <constraint firstItem="v1h-Gq-AHi" firstAttribute="width" secondItem="1FV-p7-jby" secondAttribute="width" id="wlZ-vw-yZZ"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="doneButton" destination="pUE-iE-5N1" id="U5a-0H-4fH"/>
+                                            <outlet property="faceImageView" destination="GRG-oc-1ln" id="3mA-e7-BAN"/>
+                                            <outlet property="moreButton" destination="CyT-fl-plo" id="hio-3I-d0p"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1a1-CN-emC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="A3h-fr-ydg"/>
+                            <constraint firstItem="1a1-CN-emC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="D3h-WN-qwe"/>
+                            <constraint firstItem="1a1-CN-emC" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="FC2-BG-9vw"/>
+                            <constraint firstItem="1a1-CN-emC" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="iBZ-m1-r2f"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="footerView" destination="1FV-p7-jby" id="VGc-j4-2O5"/>
+                        <outlet property="footerViewHeightConstraint" destination="JvT-B1-VeA" id="Qb6-Tg-AUI"/>
+                        <outlet property="headerView" destination="j7n-AA-Kew" id="UYH-B6-ufe"/>
+                        <outlet property="textView" destination="VIe-OG-iCj" id="xZS-pO-1FZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="459" y="374"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="button_check" width="30" height="30"/>
+        <image name="button_more" width="30" height="30"/>
+        <image name="icon_sentiment_positive" width="30" height="30"/>
+        <image name="icon_sentiments" width="80" height="30"/>
+    </resources>
+</document>
