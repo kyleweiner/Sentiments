@@ -3,8 +3,6 @@
 //  Created by Kyle Weiner on 2/4/16.
 //
 
-import Foundation
-
 struct AppConfig {
     /// The GitHub URL for this project.
     static let gitHubUrl = "https://github.com/kyleweiner/Sentiments"
