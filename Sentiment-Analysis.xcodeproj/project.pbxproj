@@ -28,7 +28,10 @@
 		2776BC1D1C742D8E00441968 /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = 2776BC1C1C742D8E00441968 /* Action.js */; };
 		2776BC211C742D8E00441968 /* Sentiment-Analysis-Highlight-Action.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2776BC181C742D8E00441968 /* Sentiment-Analysis-Highlight-Action.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2776BC271C742EE000441968 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2776BC261C742EE000441968 /* Assets.xcassets */; };
+		2776BC281C74632C00441968 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273805271C63814E0002C222 /* AppConfig.swift */; };
+		2776BC5A1C7471AE00441968 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2733E4961C633A25006C41A9 /* UIColor+CustomColors.swift */; };
 		2779C9E81C648CA8006DE31C /* SentimentAnalysisHeaderView+SentimentHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779C9E71C648CA8006DE31C /* SentimentAnalysisHeaderView+SentimentHelper.swift */; };
+		DC571728A8D56AD17A0A8E2D /* Pods_Sentiment_Analysis_Highlight_Action.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFE08BC520C739E6A31DA53 /* Pods_Sentiment_Analysis_Highlight_Action.framework */; };
 		E9016B78F82834B8AC7C5F6F /* Pods_Sentiment_Analysis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE987B154E7A5531BD7CEE55 /* Pods_Sentiment_Analysis.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +86,9 @@
 		2776BC1E1C742D8E00441968 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2776BC261C742EE000441968 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2779C9E71C648CA8006DE31C /* SentimentAnalysisHeaderView+SentimentHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SentimentAnalysisHeaderView+SentimentHelper.swift"; sourceTree = "<group>"; };
+		5E136B7593C2059BE5AA5670 /* Pods-Sentiment-Analysis-Highlight-Action.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sentiment-Analysis-Highlight-Action.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sentiment-Analysis-Highlight-Action/Pods-Sentiment-Analysis-Highlight-Action.debug.xcconfig"; sourceTree = "<group>"; };
+		60D12E8B09B1CABE9E83171F /* Pods-Sentiment-Analysis-Highlight-Action.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sentiment-Analysis-Highlight-Action.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sentiment-Analysis-Highlight-Action/Pods-Sentiment-Analysis-Highlight-Action.release.xcconfig"; sourceTree = "<group>"; };
+		7EFE08BC520C739E6A31DA53 /* Pods_Sentiment_Analysis_Highlight_Action.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sentiment_Analysis_Highlight_Action.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE987B154E7A5531BD7CEE55 /* Pods_Sentiment_Analysis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sentiment_Analysis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D19F6421911C046B5E2687 /* Pods-Sentiment-Analysis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sentiment-Analysis.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sentiment-Analysis/Pods-Sentiment-Analysis.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC571728A8D56AD17A0A8E2D /* Pods_Sentiment_Analysis_Highlight_Action.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				AE987B154E7A5531BD7CEE55 /* Pods_Sentiment_Analysis.framework */,
+				7EFE08BC520C739E6A31DA53 /* Pods_Sentiment_Analysis_Highlight_Action.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -256,6 +264,8 @@
 			children = (
 				1E2100EE161AEFF46567D243 /* Pods-Sentiment-Analysis.debug.xcconfig */,
 				F1D19F6421911C046B5E2687 /* Pods-Sentiment-Analysis.release.xcconfig */,
+				5E136B7593C2059BE5AA5670 /* Pods-Sentiment-Analysis-Highlight-Action.debug.xcconfig */,
+				60D12E8B09B1CABE9E83171F /* Pods-Sentiment-Analysis-Highlight-Action.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -289,9 +299,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2776BC241C742D8E00441968 /* Build configuration list for PBXNativeTarget "Sentiment-Analysis-Highlight-Action" */;
 			buildPhases = (
+				BB17E6768DF40787E3E51987 /* Check Pods Manifest.lock */,
 				2776BC141C742D8E00441968 /* Sources */,
 				2776BC151C742D8E00441968 /* Frameworks */,
 				2776BC161C742D8E00441968 /* Resources */,
+				47081E4943BE2710DD1D33CE /* Embed Pods Frameworks */,
+				063913D83370DC7ADD026B57 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -362,7 +375,52 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		063913D83370DC7ADD026B57 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sentiment-Analysis-Highlight-Action/Pods-Sentiment-Analysis-Highlight-Action-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47081E4943BE2710DD1D33CE /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sentiment-Analysis-Highlight-Action/Pods-Sentiment-Analysis-Highlight-Action-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		90D591B9CC1C0C41B2FD4FCB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BB17E6768DF40787E3E51987 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -437,6 +495,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2776BC1B1C742D8E00441968 /* ActionRequestHandler.swift in Sources */,
+				2776BC5A1C7471AE00441968 /* UIColor+CustomColors.swift in Sources */,
+				2776BC281C74632C00441968 /* AppConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,7 +618,6 @@
 			baseConfigurationReference = 1E2100EE161AEFF46567D243 /* Pods-Sentiment-Analysis.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Sentiment-Analysis/iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyleweiner.Sentiment-Analysis";
@@ -571,7 +630,6 @@
 			baseConfigurationReference = F1D19F6421911C046B5E2687 /* Pods-Sentiment-Analysis.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Sentiment-Analysis/iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyleweiner.Sentiment-Analysis";
@@ -581,6 +639,7 @@
 		};
 		2776BC221C742D8E00441968 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E136B7593C2059BE5AA5670 /* Pods-Sentiment-Analysis-Highlight-Action.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Sentiment-Analysis-Highlight-Action/Info.plist";
@@ -593,6 +652,7 @@
 		};
 		2776BC231C742D8E00441968 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60D12E8B09B1CABE9E83171F /* Pods-Sentiment-Analysis-Highlight-Action.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Sentiment-Analysis-Highlight-Action/Info.plist";
@@ -631,6 +691,7 @@
 				2776BC231C742D8E00441968 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
