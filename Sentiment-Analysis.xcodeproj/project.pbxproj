@@ -27,6 +27,7 @@
 		2776BC1B1C742D8E00441968 /* ActionRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776BC1A1C742D8E00441968 /* ActionRequestHandler.swift */; };
 		2776BC1D1C742D8E00441968 /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = 2776BC1C1C742D8E00441968 /* Action.js */; };
 		2776BC211C742D8E00441968 /* Sentiment-Analysis-Highlight-Action.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2776BC181C742D8E00441968 /* Sentiment-Analysis-Highlight-Action.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2776BC271C742EE000441968 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2776BC261C742EE000441968 /* Assets.xcassets */; };
 		2779C9E81C648CA8006DE31C /* SentimentAnalysisHeaderView+SentimentHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779C9E71C648CA8006DE31C /* SentimentAnalysisHeaderView+SentimentHelper.swift */; };
 		E9016B78F82834B8AC7C5F6F /* Pods_Sentiment_Analysis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE987B154E7A5531BD7CEE55 /* Pods_Sentiment_Analysis.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,7 @@
 		2776BC1A1C742D8E00441968 /* ActionRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRequestHandler.swift; sourceTree = "<group>"; };
 		2776BC1C1C742D8E00441968 /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
 		2776BC1E1C742D8E00441968 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2776BC261C742EE000441968 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2779C9E71C648CA8006DE31C /* SentimentAnalysisHeaderView+SentimentHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SentimentAnalysisHeaderView+SentimentHelper.swift"; sourceTree = "<group>"; };
 		AE987B154E7A5531BD7CEE55 /* Pods_Sentiment_Analysis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sentiment_Analysis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D19F6421911C046B5E2687 /* Pods-Sentiment-Analysis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sentiment-Analysis.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sentiment-Analysis/Pods-Sentiment-Analysis.release.xcconfig"; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 		2776BC191C742D8E00441968 /* Sentiment-Analysis-Highlight-Action */ = {
 			isa = PBXGroup;
 			children = (
+				2776BC261C742EE000441968 /* Assets.xcassets */,
 				2776BC1E1C742D8E00441968 /* Info.plist */,
 				2776BC1A1C742D8E00441968 /* ActionRequestHandler.swift */,
 				2776BC1C1C742D8E00441968 /* Action.js */,
@@ -351,6 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2776BC271C742EE000441968 /* Assets.xcassets in Resources */,
 				2776BC1D1C742D8E00441968 /* Action.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,6 +582,7 @@
 		2776BC221C742D8E00441968 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Sentiment-Analysis-Highlight-Action/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyleweiner.Sentiment-Analysis.Sentiment-Analysis-Highlight-Action";
@@ -589,6 +594,7 @@
 		2776BC231C742D8E00441968 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Sentiment-Analysis-Highlight-Action/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyleweiner.Sentiment-Analysis.Sentiment-Analysis-Highlight-Action";
