@@ -1,0 +1,6 @@
+framework module Pods_Sentiment_Analysis_Highlight_Action {
+  umbrella header "Pods-Sentiment-Analysis-Highlight-Action-umbrella.h"
+
+  export *
+  module * { export * }
+}

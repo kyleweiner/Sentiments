@@ -89,23 +89,14 @@ class SentimentAnalysisViewController: UIViewController {
     private func analyzeText() {
         guard !textView.text.isEmpty else { return }
 
-        var request = SentimentAnalysisRequest(text: textView.text)
+        var request = SentimentAnalysisRequest(type: .Text, parameterValue: textView.text)
 
         request.successHandler = { [unowned self] response in
             self.handleAnalyzedText(response)
         }
 
         request.failureHandler = { [unowned self] error in
-            let alertController = UIAlertController(
-                title: "Error",
-                message: error.localizedDescription,
-                preferredStyle: .Alert
-            )
-
-            let alertAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-            alertController.addAction(alertAction)
-
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.presentAlert(withErrorMessage: error.localizedDescription)
         }
 
         // Disables the `doneButton` to prevent extraneous requests.
@@ -119,6 +110,12 @@ class SentimentAnalysisViewController: UIViewController {
     }
 
     private func handleAnalyzedText(response: JSON) {
+        // Return early if unable the response has an error.
+        guard response["reason"].string == nil else {
+            presentAlert(withErrorMessage: response["reason"].string! + ".")
+            return
+        }
+
         // Return early if unable to get a valid sentiment from the response.
         guard let
             sentimentName = response["aggregate"]["sentiment"].string,
@@ -131,5 +128,18 @@ class SentimentAnalysisViewController: UIViewController {
         headerView.updateWithSentiment(sentiment)
         footerView.updateWithSentiment(sentiment)
         textView.updateWithSentiment(sentiment, response: response)
+    }
+
+    private func presentAlert(withErrorMessage message: String) {
+        let alertController = UIAlertController(
+            title: "Error",
+            message: message,
+            preferredStyle: .Alert
+        )
+
+        let alertAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(alertAction)
+
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
 }

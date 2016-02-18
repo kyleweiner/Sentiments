@@ -7,32 +7,36 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+enum SentimentAnalysisRequestType: String {
+    case Text = "text"
+    case URL = "url"
+}
+
 struct SentimentAnalysisRequest {
-    let text: String
+    private(set) var type: SentimentAnalysisRequestType!
+    private(set) var parameterValue: String!
 
     var completionHandler: (Void -> Void)?
     var successHandler: (JSON -> Void)?
     var failureHandler: (NSError -> Void)?
 
-    private var encodedText: String {
+    private var encodedUrl: String {
         let characters = NSCharacterSet.URLQueryAllowedCharacterSet()
+        let encodedValue = parameterValue.stringByAddingPercentEncodingWithAllowedCharacters(characters)!
 
-        return text.stringByAddingPercentEncodingWithAllowedCharacters(characters)!
-    }
-
-    private var url: String {
         let endpoint = AppConfig.SentimentAnalysisAPI.endpoint
         let key = AppConfig.SentimentAnalysisAPI.key
 
-        return "\(endpoint)?text=\(encodedText)&apikey=\(key)"
+        return "\(endpoint)?\(type.rawValue)=\(encodedValue)&apikey=\(key)"
     }
 
-    init(text: String) {
-        self.text = text
+    init(type: SentimentAnalysisRequestType, parameterValue: String) {
+        self.type = type
+        self.parameterValue = parameterValue
     }
 
     func makeRequest() {
-        Alamofire.request(.GET, url).responseJSON { response in
+        Alamofire.request(.GET, encodedUrl).responseJSON { response in
             self.completionHandler?()
 
             switch response.result {
