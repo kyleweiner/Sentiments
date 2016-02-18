@@ -89,7 +89,7 @@ class SentimentAnalysisViewController: UIViewController {
     private func analyzeText() {
         guard !textView.text.isEmpty else { return }
 
-        var request = SentimentAnalysisRequest(text: textView.text)
+        var request = SentimentAnalysisRequest(type: .Text, parameterValue: textView.text)
 
         request.successHandler = { [unowned self] response in
             self.handleAnalyzedText(response)
@@ -111,7 +111,7 @@ class SentimentAnalysisViewController: UIViewController {
 
     private func handleAnalyzedText(response: JSON) {
         // Return early if unable the response has an error.
-        guard response["reason"] == nil else {
+        guard response["reason"].string == nil else {
             presentAlert(withErrorMessage: response["reason"].string! + ".")
             return
         }
