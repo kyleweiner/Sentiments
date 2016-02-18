@@ -24,13 +24,15 @@
 		273805311C6398AB0002C222 /* SentimentType+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273805301C6398AB0002C222 /* SentimentType+Helper.swift */; };
 		273805331C63A0810002C222 /* SentimentAnalysisFooterView+SentimentHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273805321C63A0810002C222 /* SentimentAnalysisFooterView+SentimentHelper.swift */; };
 		273805351C63A7C90002C222 /* SentimentAnalysisTextView+SentimentHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273805341C63A7C90002C222 /* SentimentAnalysisTextView+SentimentHelper.swift */; };
-		2776BC1B1C742D8E00441968 /* ActionRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776BC1A1C742D8E00441968 /* ActionRequestHandler.swift */; };
-		2776BC1D1C742D8E00441968 /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = 2776BC1C1C742D8E00441968 /* Action.js */; };
 		2776BC211C742D8E00441968 /* Sentiment-Analysis-Highlight-Action.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2776BC181C742D8E00441968 /* Sentiment-Analysis-Highlight-Action.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		2776BC271C742EE000441968 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2776BC261C742EE000441968 /* Assets.xcassets */; };
 		2776BC281C74632C00441968 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273805271C63814E0002C222 /* AppConfig.swift */; };
 		2776BC5A1C7471AE00441968 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2733E4961C633A25006C41A9 /* UIColor+CustomColors.swift */; };
+		2776BC5B1C747F6900441968 /* SentimentAnalysisRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738052C1C638BEB0002C222 /* SentimentAnalysisRequest.swift */; };
 		2779C9E81C648CA8006DE31C /* SentimentAnalysisHeaderView+SentimentHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779C9E71C648CA8006DE31C /* SentimentAnalysisHeaderView+SentimentHelper.swift */; };
+		27E9BCAB1C754D1100577141 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27E9BCA31C754D1100577141 /* Assets.xcassets */; };
+		27E9BCAC1C754D1100577141 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9BCA51C754D1100577141 /* UIColor+Hex.swift */; };
+		27E9BCAD1C754D1100577141 /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = 27E9BCA71C754D1100577141 /* Action.js */; };
+		27E9BCAE1C754D1100577141 /* ActionRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9BCA81C754D1100577141 /* ActionRequestHandler.swift */; };
 		DC571728A8D56AD17A0A8E2D /* Pods_Sentiment_Analysis_Highlight_Action.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFE08BC520C739E6A31DA53 /* Pods_Sentiment_Analysis_Highlight_Action.framework */; };
 		E9016B78F82834B8AC7C5F6F /* Pods_Sentiment_Analysis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE987B154E7A5531BD7CEE55 /* Pods_Sentiment_Analysis.framework */; };
 /* End PBXBuildFile section */
@@ -81,11 +83,12 @@
 		273805321C63A0810002C222 /* SentimentAnalysisFooterView+SentimentHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SentimentAnalysisFooterView+SentimentHelper.swift"; sourceTree = "<group>"; };
 		273805341C63A7C90002C222 /* SentimentAnalysisTextView+SentimentHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SentimentAnalysisTextView+SentimentHelper.swift"; sourceTree = "<group>"; };
 		2776BC181C742D8E00441968 /* Sentiment-Analysis-Highlight-Action.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Sentiment-Analysis-Highlight-Action.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2776BC1A1C742D8E00441968 /* ActionRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRequestHandler.swift; sourceTree = "<group>"; };
-		2776BC1C1C742D8E00441968 /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
-		2776BC1E1C742D8E00441968 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2776BC261C742EE000441968 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2779C9E71C648CA8006DE31C /* SentimentAnalysisHeaderView+SentimentHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SentimentAnalysisHeaderView+SentimentHelper.swift"; sourceTree = "<group>"; };
+		27E9BCA31C754D1100577141 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		27E9BCA51C754D1100577141 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		27E9BCA71C754D1100577141 /* Action.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
+		27E9BCA81C754D1100577141 /* ActionRequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionRequestHandler.swift; sourceTree = "<group>"; };
+		27E9BCAA1C754D1100577141 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E136B7593C2059BE5AA5670 /* Pods-Sentiment-Analysis-Highlight-Action.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sentiment-Analysis-Highlight-Action.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sentiment-Analysis-Highlight-Action/Pods-Sentiment-Analysis-Highlight-Action.debug.xcconfig"; sourceTree = "<group>"; };
 		60D12E8B09B1CABE9E83171F /* Pods-Sentiment-Analysis-Highlight-Action.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sentiment-Analysis-Highlight-Action.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sentiment-Analysis-Highlight-Action/Pods-Sentiment-Analysis-Highlight-Action.release.xcconfig"; sourceTree = "<group>"; };
 		7EFE08BC520C739E6A31DA53 /* Pods_Sentiment_Analysis_Highlight_Action.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sentiment_Analysis_Highlight_Action.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -242,12 +245,45 @@
 		2776BC191C742D8E00441968 /* Sentiment-Analysis-Highlight-Action */ = {
 			isa = PBXGroup;
 			children = (
-				2776BC261C742EE000441968 /* Assets.xcassets */,
-				2776BC1E1C742D8E00441968 /* Info.plist */,
-				2776BC1A1C742D8E00441968 /* ActionRequestHandler.swift */,
-				2776BC1C1C742D8E00441968 /* Action.js */,
+				27E9BCA21C754D1100577141 /* Assets */,
+				27E9BCA41C754D1100577141 /* Extensions */,
+				27E9BCA61C754D1100577141 /* Highlighting */,
+				27E9BCA91C754D1100577141 /* Supporting Files */,
 			);
 			path = "Sentiment-Analysis-Highlight-Action";
+			sourceTree = "<group>";
+		};
+		27E9BCA21C754D1100577141 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				27E9BCA31C754D1100577141 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		27E9BCA41C754D1100577141 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				27E9BCA51C754D1100577141 /* UIColor+Hex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		27E9BCA61C754D1100577141 /* Highlighting */ = {
+			isa = PBXGroup;
+			children = (
+				27E9BCA71C754D1100577141 /* Action.js */,
+				27E9BCA81C754D1100577141 /* ActionRequestHandler.swift */,
+			);
+			path = Highlighting;
+			sourceTree = "<group>";
+		};
+		27E9BCA91C754D1100577141 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27E9BCAA1C754D1100577141 /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		3DE49504A69B31709C9CA3B9 /* Frameworks */ = {
@@ -367,8 +403,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2776BC271C742EE000441968 /* Assets.xcassets in Resources */,
-				2776BC1D1C742D8E00441968 /* Action.js in Resources */,
+				27E9BCAD1C754D1100577141 /* Action.js in Resources */,
+				27E9BCAB1C754D1100577141 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,9 +530,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2776BC1B1C742D8E00441968 /* ActionRequestHandler.swift in Sources */,
+				2776BC5B1C747F6900441968 /* SentimentAnalysisRequest.swift in Sources */,
+				27E9BCAC1C754D1100577141 /* UIColor+Hex.swift in Sources */,
 				2776BC5A1C7471AE00441968 /* UIColor+CustomColors.swift in Sources */,
 				2776BC281C74632C00441968 /* AppConfig.swift in Sources */,
+				27E9BCAE1C754D1100577141 /* ActionRequestHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,7 +680,7 @@
 			baseConfigurationReference = 5E136B7593C2059BE5AA5670 /* Pods-Sentiment-Analysis-Highlight-Action.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "Sentiment-Analysis-Highlight-Action/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sentiment-Analysis-Highlight-Action/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyleweiner.Sentiment-Analysis.Sentiment-Analysis-Highlight-Action";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -655,7 +693,7 @@
 			baseConfigurationReference = 60D12E8B09B1CABE9E83171F /* Pods-Sentiment-Analysis-Highlight-Action.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "Sentiment-Analysis-Highlight-Action/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sentiment-Analysis-Highlight-Action/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyleweiner.Sentiment-Analysis.Sentiment-Analysis-Highlight-Action";
 				PRODUCT_NAME = "$(TARGET_NAME)";
