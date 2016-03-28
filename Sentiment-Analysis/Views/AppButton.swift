@@ -28,9 +28,9 @@ class AppButton: UIButton, TouchAnimatable {
     private func setup() {
         adjustsImageWhenHighlighted = false
 
-        addTarget(self, action: "didTouchDown", forControlEvents: [.TouchDown, .TouchDragInside])
-        addTarget(self, action: "didTap", forControlEvents: .TouchUpInside)
-        addTarget(self, action: "didCancelTouch", forControlEvents: [.TouchCancel, .TouchDragOutside])
+        addTarget(self, action: #selector(didTouchDown), forControlEvents: [.TouchDown, .TouchDragInside])
+        addTarget(self, action: #selector(didTap), forControlEvents: .TouchUpInside)
+        addTarget(self, action: #selector(didCancelTouch), forControlEvents: [.TouchCancel, .TouchDragOutside])
     }
 
     func didTouchDown() {

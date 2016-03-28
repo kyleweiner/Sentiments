@@ -28,8 +28,8 @@ class SentimentAnalysisViewController: UIViewController {
         // Adds observers to monitor when the keyboard will show or hide.
         // This is necessary to keep `footerView` above the keyboard.
         let defaultCenter = NSNotificationCenter.defaultCenter()
-        defaultCenter.addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        defaultCenter.addObserver(self, selector: "keyboardWillhide:", name: UIKeyboardWillHideNotification, object: nil)
+        defaultCenter.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        defaultCenter.addObserver(self, selector: #selector(keyboardWillhide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
 
     override func viewDidAppear(animated: Bool) {
