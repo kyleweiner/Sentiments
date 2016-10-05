@@ -5,7 +5,7 @@
 
 import UIKit
 import MobileCoreServices
-import SwiftyJSON
+//import SwiftyJSON
 
 // MARK: - ActionRequestHandler
 
@@ -14,27 +14,27 @@ class ActionRequestHandler: NSObject {}
 // MARK: - NSExtensionRequestHandling
 
 extension ActionRequestHandler: NSExtensionRequestHandling {
-    func beginRequestWithExtensionContext(context: NSExtensionContext) {
+    func beginRequest(with context: NSExtensionContext) {
         let inputItem = context.inputItems.first as! NSExtensionItem
         let itemProvider = inputItem.attachments!.first as! NSItemProvider
 
-        itemProvider.loadItemForTypeIdentifier(String(kUTTypePropertyList), options: nil) { (item, error) in
+        itemProvider.loadItem(forTypeIdentifier: String(kUTTypePropertyList), options: nil) { (item, error) in
             let dictionary = item as! [String: AnyObject]
-            let results = dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as! [NSObject: AnyObject]
+            let results = dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as! [AnyHashable: Any]
 
-            NSOperationQueue.mainQueue().addOperationWithBlock { [unowned self] in
+            OperationQueue.main.addOperation { [unowned self] in
                 self.handleItem(withContext: context, results: results)
             }
         }
     }
 
-    private func handleItem(withContext context: NSExtensionContext, results: [NSObject: AnyObject]) {
+    fileprivate func handleItem(withContext context: NSExtensionContext, results: [AnyHashable: Any]) {
         guard let url = results["url"] as? String else {
-            context.completeRequestReturningItems([], completionHandler: nil)
+            context.completeRequest(returningItems: [], completionHandler: nil)
             return
         }
 
-        var request = SentimentAnalysisRequest(type: .URL, parameterValue: url)
+        var request = SentimentAnalysisRequest(type: .url, parameterValue: url)
 
         request.successHandler = { response in
             let dictionary: [String: [String: AnyObject]]
@@ -43,31 +43,31 @@ extension ActionRequestHandler: NSExtensionRequestHandling {
 
             dictionary = [
                 "error": [
-                    "code": response["error"].intValue,
-                    "reason": response["reason"].stringValue
+                    "code": response["error"].intValue as AnyObject,
+                    "reason": response["reason"].stringValue as AnyObject
                 ],
                 "colors": [
-                    "positive": UIColor.positiveColor().hexString(),
-                    "negative": UIColor.negativeColor().hexString()
+                    "positive": AppColor.positive.hexString() as AnyObject,
+                    "negative": AppColor.negative.hexString() as AnyObject
                 ],
                 "sentiment": [
-                    "positive": positiveElements.map() { $0["original_text"].stringValue },
-                    "negative": negativeElements.map() { $0["original_text"].stringValue }
+                    "positive": positiveElements.map() { $0["original_text"].stringValue } as AnyObject,
+                    "negative": negativeElements.map() { $0["original_text"].stringValue } as AnyObject
                 ]
             ]
 
             let resultsDictionary = [NSExtensionJavaScriptFinalizeArgumentKey: dictionary]
-            let resultsProvider = NSItemProvider(item: resultsDictionary, typeIdentifier: String(kUTTypePropertyList))
+            let resultsProvider = NSItemProvider(item: resultsDictionary as NSSecureCoding?, typeIdentifier: String(kUTTypePropertyList))
             let resultsItem = NSExtensionItem()
 
             resultsItem.attachments = [resultsProvider]
-            context.completeRequestReturningItems([resultsItem], completionHandler: nil)
+            context.completeRequest(returningItems: [resultsItem], completionHandler: nil)
         }
 
         request.failureHandler = { error in
-            context.completeRequestReturningItems([], completionHandler: nil)
+            context.completeRequest(returningItems: [], completionHandler: nil)
         }
 
-        request.makeRequest()
+        request.make()
     }
 }

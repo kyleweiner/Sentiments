@@ -8,21 +8,20 @@ import Alamofire
 import SwiftyJSON
 
 enum SentimentAnalysisRequestType: String {
-    case Text = "text"
-    case URL = "url"
+    case text, url
 }
 
 struct SentimentAnalysisRequest {
-    private(set) var type: SentimentAnalysisRequestType!
-    private(set) var parameterValue: String!
+    fileprivate(set) var type: SentimentAnalysisRequestType!
+    fileprivate(set) var parameterValue: String!
 
-    var completionHandler: (Void -> Void)?
-    var successHandler: (JSON -> Void)?
-    var failureHandler: (NSError -> Void)?
+    var completionHandler: ((Void) -> Void)?
+    var successHandler: ((JSON) -> Void)?
+    var failureHandler: ((NSError) -> Void)?
 
-    private var encodedUrl: String {
-        let characters = NSCharacterSet.URLQueryAllowedCharacterSet()
-        let encodedValue = parameterValue.stringByAddingPercentEncodingWithAllowedCharacters(characters)!
+    fileprivate var encodedUrl: String {
+        let characters = CharacterSet.urlQueryAllowed
+        let encodedValue = parameterValue.addingPercentEncoding(withAllowedCharacters: characters)!
 
         let endpoint = AppConfig.SentimentAnalysisAPI.endpoint
         let key = AppConfig.SentimentAnalysisAPI.key
@@ -35,16 +34,16 @@ struct SentimentAnalysisRequest {
         self.parameterValue = parameterValue
     }
 
-    func makeRequest() {
-        Alamofire.request(.GET, encodedUrl).responseJSON { response in
+    func make() {
+        Alamofire.request(encodedUrl).responseJSON { response in
             self.completionHandler?()
 
             switch response.result {
-            case .Success:
+            case .success:
                 let json = JSON(response.result.value!)
                 self.successHandler?(json)
-            case .Failure(let error):
-                self.failureHandler?(error)
+            case .failure(let error):
+                self.failureHandler?(error as NSError)
             }
         }
     }

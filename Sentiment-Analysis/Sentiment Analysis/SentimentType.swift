@@ -4,7 +4,5 @@
 //
 
 enum SentimentType: String {
-    case Negative = "negative"
-    case Neutral = "neutral"
-    case Positive = "positive"
+    case negative, neutral, positive
 }

@@ -12,9 +12,9 @@ class SentimentAnalysisViewController: UIViewController {
     @IBOutlet weak var footerView: SentimentAnalysisFooterView!
     @IBOutlet weak var footerViewHeightConstraint: NSLayoutConstraint!
 
-    private var initialFooterViewHeightConstant: CGFloat!
+    fileprivate var initialFooterViewHeightConstant: CGFloat!
 
-    private var sentiment: SentimentType = .Neutral
+    fileprivate var sentiment: SentimentType = .neutral
 
     // MARK: - Lifecycle
 
@@ -27,56 +27,52 @@ class SentimentAnalysisViewController: UIViewController {
 
         // Adds observers to monitor when the keyboard will show or hide.
         // This is necessary to keep `footerView` above the keyboard.
-        let defaultCenter = NSNotificationCenter.defaultCenter()
-        defaultCenter.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        defaultCenter.addObserver(self, selector: #selector(keyboardWillhide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        let defaultCenter = NotificationCenter.default
+        defaultCenter.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        defaultCenter.addObserver(self, selector: #selector(keyboardWillhide(_:)), name: .UIKeyboardWillHide, object: nil)
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         textView.becomeFirstResponder()
     }
 
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
-
     // MARK: - UIKeyboard
 
-    func keyboardWillShow(notification: NSNotification) {
-        guard let userInfo = notification.userInfo else { return }
+    func keyboardWillShow(_ notification: Notification) {
+        guard let userInfo = (notification as NSNotification).userInfo else { return }
 
-        let keyboardSize = userInfo[UIKeyboardFrameEndUserInfoKey]!.CGRectValue
-        let animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey]!.doubleValue
+        let keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue
+        let animationDuration = (userInfo[UIKeyboardAnimationDurationUserInfoKey]! as AnyObject).doubleValue
 
-        footerViewHeightConstraint.constant = keyboardSize.height + initialFooterViewHeightConstant
+        footerViewHeightConstraint.constant = (keyboardSize?.height)! + initialFooterViewHeightConstant
 
-        UIView.animateWithDuration(animationDuration, delay: 0, options: [.BeginFromCurrentState, .CurveLinear], animations: { [unowned self] in
+        UIView.animate(withDuration: animationDuration!, delay: 0, options: [.beginFromCurrentState, .curveLinear], animations: { [unowned self] in
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
 
-    func keyboardWillhide(notification: NSNotification) {
-        guard let userInfo = notification.userInfo else { return }
+    func keyboardWillhide(_ notification: Notification) {
+        guard let userInfo = (notification as NSNotification).userInfo else { return }
 
-        let animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey]!.doubleValue
+        let animationDuration = (userInfo[UIKeyboardAnimationDurationUserInfoKey]! as AnyObject).doubleValue
 
         footerViewHeightConstraint.constant = initialFooterViewHeightConstant
 
-        UIView.animateWithDuration(animationDuration, delay: 0, options: [.BeginFromCurrentState, .CurveLinear], animations: { [unowned self] in
+        UIView.animate(withDuration: animationDuration!, delay: 0, options: [.beginFromCurrentState, .curveLinear], animations: { [unowned self] in
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
 
     // MARK: - SentimentAnalysisFooterView
 
-    private func configureFooterView() {
-        footerView.updateWithSentiment(sentiment, animated: false)
+    fileprivate func configureFooterView() {
+        footerView.update(with: sentiment, animated: false)
 
         footerView.moreButton.touchUpHandler = {
-            let url = NSURL(string: AppConfig.gitHubUrl)!
-            UIApplication.sharedApplication().openURL(url)
+            let url = URL(string: AppConfig.gitHubUrl)!
+            UIApplication.shared.openURL(url)
         }
 
         footerView.doneButton.touchUpHandler = { [unowned self] in
@@ -86,60 +82,60 @@ class SentimentAnalysisViewController: UIViewController {
 
     // MARK: - Sentiment Analysis
 
-    private func analyzeText() {
+    fileprivate func analyzeText() {
         guard !textView.text.isEmpty else { return }
 
-        var request = SentimentAnalysisRequest(type: .Text, parameterValue: textView.text)
+        // Disables the `doneButton` to prevent extraneous requests.
+        footerView.doneButton.isEnabled = false
+
+        var request = SentimentAnalysisRequest(type: .text, parameterValue: textView.text)
 
         request.successHandler = { [unowned self] response in
             self.handleAnalyzedText(response)
         }
 
         request.failureHandler = { [unowned self] error in
-            self.presentAlert(withErrorMessage: error.localizedDescription)
+            self.presentAlert(with: error.localizedDescription)
         }
-
-        // Disables the `doneButton` to prevent extraneous requests.
-        footerView.doneButton.enabled = false
 
         request.completionHandler = { [unowned self] in
-            self.footerView.doneButton.enabled = true
+            self.footerView.doneButton.isEnabled = true
         }
 
-        request.makeRequest()
+        request.make()
     }
 
-    private func handleAnalyzedText(response: JSON) {
-        // Return early if unable the response has an error.
+    fileprivate func handleAnalyzedText(_ response: JSON) {
+        // Return early if the response has an error.
         guard response["reason"].string == nil else {
-            presentAlert(withErrorMessage: response["reason"].string! + ".")
+            presentAlert(with: response["reason"].string! + ".")
             return
         }
 
         // Return early if unable to get a valid sentiment from the response.
         guard let
             sentimentName = response["aggregate"]["sentiment"].string,
-            nextSentiment = SentimentType(rawValue: sentimentName) else {
+            let nextSentiment = SentimentType(rawValue: sentimentName) else {
             return
         }
 
         // Updates the view for the `nextSentiment`.
         sentiment = nextSentiment
-        headerView.updateWithSentiment(sentiment)
-        footerView.updateWithSentiment(sentiment)
-        textView.updateWithSentiment(sentiment, response: response)
+        headerView.update(with: sentiment)
+        footerView.update(with: sentiment)
+        textView.update(with: sentiment, response: response)
     }
 
-    private func presentAlert(withErrorMessage message: String) {
+    fileprivate func presentAlert(with message: String) {
         let alertController = UIAlertController(
             title: "Error",
             message: message,
-            preferredStyle: .Alert
+            preferredStyle: .alert
         )
 
-        let alertAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(alertAction)
 
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
 }

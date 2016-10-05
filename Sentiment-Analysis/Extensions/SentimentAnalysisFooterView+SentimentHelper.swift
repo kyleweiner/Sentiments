@@ -7,7 +7,7 @@ import UIKit
 
 extension SentimentAnalysisFooterView {
     /// Updates the view for the specified `SentimentType`.
-    func updateWithSentiment(sentiment: SentimentType, animated: Bool = true) {
+    func update(with sentiment: SentimentType, animated: Bool = true) {
         faceImageView.image = sentiment.image
 
         guard animated else {
@@ -16,7 +16,7 @@ extension SentimentAnalysisFooterView {
             return
         }
 
-        UIView.animateWithDuration(0.3, delay: 0, options: [.BeginFromCurrentState, .CurveEaseOut], animations: { [unowned self] in
+        UIView.animate(withDuration: 0.3, delay: 0, options: [.beginFromCurrentState, .curveEaseOut], animations: { [unowned self] in
             self.backgroundColor = sentiment.color
         }, completion: nil)
     }

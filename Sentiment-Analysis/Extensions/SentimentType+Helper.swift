@@ -8,9 +8,9 @@ import UIKit
 extension SentimentType {
     var color: UIColor {
         switch self {
-        case .Negative: return .negativeColor()
-        case .Neutral: return . neutralColor()
-        case .Positive: return .positiveColor()
+        case .negative: return AppColor.negative
+        case .neutral: return AppColor.neutral
+        case .positive: return AppColor.positive
         }
     }
 

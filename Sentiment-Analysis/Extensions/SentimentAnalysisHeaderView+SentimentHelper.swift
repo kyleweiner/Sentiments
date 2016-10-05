@@ -7,7 +7,7 @@ import UIKit
 
 extension SentimentAnalysisHeaderView {
     /// Updates the view for the specified `SentimentType`.
-    func updateWithSentiment(sentiment: SentimentType) {
+    func update(with sentiment: SentimentType) {
         sentimentIcon.tintColor = sentiment.color
     }
 }

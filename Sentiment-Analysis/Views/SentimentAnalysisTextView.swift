@@ -6,8 +6,8 @@
 import UIKit
 
 class SentimentAnalysisTextView: UITextView {
-    let defaultAlignment: NSTextAlignment = .Center
-    let defaultTextColor: UIColor = .blackColor()
+    let defaultAlignment: NSTextAlignment = .center
+    let defaultTextColor: UIColor = .black
     let defaultFontSize: CGFloat = 20
     let defaultLineSpacing: CGFloat = 2.5
 
@@ -17,10 +17,10 @@ class SentimentAnalysisTextView: UITextView {
         configureView()
     }
 
-    private func configureView() {
+    fileprivate func configureView() {
         textContainerInset = UIEdgeInsetsMake(10, 15, 15, 15)
 
-        font = UIFont.systemFontOfSize(defaultFontSize)
+        font = UIFont.systemFont(ofSize: defaultFontSize)
         textAlignment = defaultAlignment
         textColor = defaultTextColor
 
@@ -29,7 +29,7 @@ class SentimentAnalysisTextView: UITextView {
 }
 
 extension SentimentAnalysisTextView: NSLayoutManagerDelegate {
-    func layoutManager(layoutManager: NSLayoutManager, lineSpacingAfterGlyphAtIndex glyphIndex: Int, withProposedLineFragmentRect rect: CGRect) -> CGFloat {
+    func layoutManager(_ layoutManager: NSLayoutManager, lineSpacingAfterGlyphAt glyphIndex: Int, withProposedLineFragmentRect rect: CGRect) -> CGFloat {
         return defaultLineSpacing
     }
 }

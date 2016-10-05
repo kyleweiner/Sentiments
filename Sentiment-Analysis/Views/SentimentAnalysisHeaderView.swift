@@ -14,18 +14,18 @@ class SentimentAnalysisHeaderView: UIView {
         addDividerLayer()
     }
 
-    private func addDividerLayer() {
+    fileprivate func addDividerLayer() {
         // Adds a divider `CAShapeLayer` to the view.
         let height: CGFloat = 0.5
         let horizontalPadding: CGFloat = 15
 
-        let screenWidth = UIScreen.mainScreen().bounds.width
-        let origin = CGPointMake(horizontalPadding, frame.height - height)
-        let size = CGSizeMake(screenWidth - horizontalPadding - origin.x, height)
+        let screenWidth = UIScreen.main.bounds.width
+        let origin = CGPoint(x: horizontalPadding, y: frame.height - height)
+        let size = CGSize(width: screenWidth - horizontalPadding - origin.x, height: height)
 
         let dividerLayer = CAShapeLayer()
-        dividerLayer.path = UIBezierPath(rect: CGRect(origin: origin, size: size)).CGPath
-        dividerLayer.fillColor = UIColor.grey500Color().CGColor
+        dividerLayer.frame = CGRect(origin: origin, size: size)
+        dividerLayer.backgroundColor = AppColor.grey500.cgColor
 
         layer.addSublayer(dividerLayer)
     }

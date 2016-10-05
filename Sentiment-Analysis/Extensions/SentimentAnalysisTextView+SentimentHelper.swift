@@ -8,9 +8,9 @@ import SwiftyJSON
 
 extension SentimentAnalysisTextView {
     /// Updates the view with the `SentimentType` and analyzed text response.
-    func updateWithSentiment(sentiment: SentimentType, response: JSON) {
+    func update(with sentiment: SentimentType, response: JSON) {
         // Hides the view, processes the text and then shows the view.
-        UIView.animateWithDuration(0.3, delay: 0, options: [.BeginFromCurrentState, .CurveEaseOut], animations: {
+        UIView.animate(withDuration: 0.3, delay: 0, options: [.beginFromCurrentState, .curveEaseOut], animations: {
             [unowned self] in
             self.alpha = 0
         }) {
@@ -19,7 +19,7 @@ extension SentimentAnalysisTextView {
             self.highlightTextWithResponse(response)
             self.tintColor = sentiment.color
 
-            UIView.animateWithDuration(0.6, delay: 0, options: .CurveEaseOut, animations: {
+            UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseOut, animations: {
                 self.alpha = 1
             }, completion: nil)
         }
@@ -30,14 +30,14 @@ extension SentimentAnalysisTextView {
         textColor = defaultTextColor
 
         let normalizedText = NSMutableAttributedString(attributedString: attributedText)
-        let range = (text as NSString).rangeOfString(text)
+        let range = (text as NSString).range(of: text)
         normalizedText.removeAttribute(NSBackgroundColorAttributeName, range: range)
 
         attributedText = normalizedText
     }
 
     /// Highlights the "positive" and "negative" text from the response.
-    func highlightTextWithResponse(response: JSON) {
+    func highlightTextWithResponse(_ response: JSON) {
         let highlightedText = NSMutableAttributedString(attributedString: attributedText)
 
         if let positiveElements = response["positive"].array {
@@ -47,13 +47,13 @@ extension SentimentAnalysisTextView {
                 }
 
                 highlightedText.addAttribute(NSForegroundColorAttributeName,
-                    value: UIColor.whiteColor(),
-                    range: (text as NSString).rangeOfString(elementText)
+                    value: UIColor.white,
+                    range: (text as NSString).range(of: elementText)
                 )
 
                 highlightedText.addAttribute(NSBackgroundColorAttributeName,
-                    value: UIColor.positiveColor(),
-                    range: (text as NSString).rangeOfString(elementText)
+                    value: AppColor.positive,
+                    range: (text as NSString).range(of: elementText)
                 )
             }
         }
@@ -65,13 +65,13 @@ extension SentimentAnalysisTextView {
                 }
 
                 highlightedText.addAttribute(NSForegroundColorAttributeName,
-                    value: UIColor.whiteColor(),
-                    range: (text as NSString).rangeOfString(elementText)
+                    value: UIColor.white,
+                    range: (text as NSString).range(of: elementText)
                 )
 
                 highlightedText.addAttribute(NSBackgroundColorAttributeName,
-                    value: UIColor.negativeColor(),
-                    range: (text as NSString).rangeOfString(elementText)
+                    value: AppColor.negative,
+                    range: (text as NSString).range(of: elementText)
                 )
             }
         }

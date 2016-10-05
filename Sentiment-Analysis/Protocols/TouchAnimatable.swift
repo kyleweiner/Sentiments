@@ -12,17 +12,17 @@ protocol TouchAnimatable {
 
 extension TouchAnimatable where Self: UIView {
     func animateTouchDown() {
-        transform = CGAffineTransformMakeScale(0.9, 0.9)
+        transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
     }
 
     func animateTouchUp() {
-        UIView.animateWithDuration(0.6,
+        UIView.animate(withDuration: 0.6,
             delay: 0.0,
             usingSpringWithDamping: 0.2,
             initialSpringVelocity: 6.0,
-            options: [.AllowUserInteraction, .BeginFromCurrentState, .CurveEaseOut],
+            options: [.allowUserInteraction, .beginFromCurrentState, .curveEaseOut],
             animations: { [unowned self] in
-                self.transform = CGAffineTransformIdentity
+                self.transform = CGAffineTransform.identity
             },
             completion: nil
         )

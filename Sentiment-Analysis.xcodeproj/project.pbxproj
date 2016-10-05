@@ -13,7 +13,6 @@
 		2733E48B1C631B0D006C41A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2733E4851C631B0D006C41A9 /* AppDelegate.swift */; };
 		2733E48E1C632A64006C41A9 /* SentimentAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2733E48D1C632A64006C41A9 /* SentimentAnalysisViewController.swift */; };
 		2733E4941C633943006C41A9 /* SentimentAnalysisHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2733E4931C633943006C41A9 /* SentimentAnalysisHeaderView.swift */; };
-		2733E4971C633A25006C41A9 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2733E4961C633A25006C41A9 /* UIColor+CustomColors.swift */; };
 		2733E4991C63464B006C41A9 /* SentimentAnalysisTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2733E4981C63464B006C41A9 /* SentimentAnalysisTextView.swift */; };
 		2738051F1C63722C0002C222 /* SentimentAnalysisFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738051E1C63722C0002C222 /* SentimentAnalysisFooterView.swift */; };
 		273805211C6377D30002C222 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273805201C6377D30002C222 /* AppButton.swift */; };
@@ -24,9 +23,10 @@
 		273805311C6398AB0002C222 /* SentimentType+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273805301C6398AB0002C222 /* SentimentType+Helper.swift */; };
 		273805331C63A0810002C222 /* SentimentAnalysisFooterView+SentimentHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273805321C63A0810002C222 /* SentimentAnalysisFooterView+SentimentHelper.swift */; };
 		273805351C63A7C90002C222 /* SentimentAnalysisTextView+SentimentHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273805341C63A7C90002C222 /* SentimentAnalysisTextView+SentimentHelper.swift */; };
+		274126421DA4D2640052F33A /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274126411DA4D2640052F33A /* AppColor.swift */; };
+		274126431DA4D2640052F33A /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274126411DA4D2640052F33A /* AppColor.swift */; };
 		2776BC211C742D8E00441968 /* Sentiment-Analysis-Highlight-Action.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2776BC181C742D8E00441968 /* Sentiment-Analysis-Highlight-Action.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2776BC281C74632C00441968 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273805271C63814E0002C222 /* AppConfig.swift */; };
-		2776BC5A1C7471AE00441968 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2733E4961C633A25006C41A9 /* UIColor+CustomColors.swift */; };
 		2776BC5B1C747F6900441968 /* SentimentAnalysisRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738052C1C638BEB0002C222 /* SentimentAnalysisRequest.swift */; };
 		2779C9E81C648CA8006DE31C /* SentimentAnalysisHeaderView+SentimentHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779C9E71C648CA8006DE31C /* SentimentAnalysisHeaderView+SentimentHelper.swift */; };
 		27E9BCAB1C754D1100577141 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27E9BCA31C754D1100577141 /* Assets.xcassets */; };
@@ -71,7 +71,6 @@
 		2733E4861C631B0D006C41A9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2733E48D1C632A64006C41A9 /* SentimentAnalysisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentimentAnalysisViewController.swift; sourceTree = "<group>"; };
 		2733E4931C633943006C41A9 /* SentimentAnalysisHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentimentAnalysisHeaderView.swift; sourceTree = "<group>"; };
-		2733E4961C633A25006C41A9 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
 		2733E4981C63464B006C41A9 /* SentimentAnalysisTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentimentAnalysisTextView.swift; sourceTree = "<group>"; };
 		2738051E1C63722C0002C222 /* SentimentAnalysisFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentimentAnalysisFooterView.swift; sourceTree = "<group>"; };
 		273805201C6377D30002C222 /* AppButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
@@ -82,6 +81,7 @@
 		273805301C6398AB0002C222 /* SentimentType+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SentimentType+Helper.swift"; sourceTree = "<group>"; };
 		273805321C63A0810002C222 /* SentimentAnalysisFooterView+SentimentHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SentimentAnalysisFooterView+SentimentHelper.swift"; sourceTree = "<group>"; };
 		273805341C63A7C90002C222 /* SentimentAnalysisTextView+SentimentHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SentimentAnalysisTextView+SentimentHelper.swift"; sourceTree = "<group>"; };
+		274126411DA4D2640052F33A /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		2776BC181C742D8E00441968 /* Sentiment-Analysis-Highlight-Action.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Sentiment-Analysis-Highlight-Action.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2779C9E71C648CA8006DE31C /* SentimentAnalysisHeaderView+SentimentHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SentimentAnalysisHeaderView+SentimentHelper.swift"; sourceTree = "<group>"; };
 		27E9BCA31C754D1100577141 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -164,6 +164,7 @@
 		2733E4811C631B0D006C41A9 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				274126411DA4D2640052F33A /* AppColor.swift */,
 				273805271C63814E0002C222 /* AppConfig.swift */,
 			);
 			path = Constants;
@@ -198,7 +199,6 @@
 		2733E4951C633A17006C41A9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				2733E4961C633A25006C41A9 /* UIColor+CustomColors.swift */,
 				273805301C6398AB0002C222 /* SentimentType+Helper.swift */,
 				2779C9E71C648CA8006DE31C /* SentimentAnalysisHeaderView+SentimentHelper.swift */,
 				273805321C63A0810002C222 /* SentimentAnalysisFooterView+SentimentHelper.swift */,
@@ -313,12 +313,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2733E4771C631A81006C41A9 /* Build configuration list for PBXNativeTarget "Sentiment-Analysis" */;
 			buildPhases = (
-				90D591B9CC1C0C41B2FD4FCB /* Check Pods Manifest.lock */,
+				90D591B9CC1C0C41B2FD4FCB /* [CP] Check Pods Manifest.lock */,
 				2733E4611C631A81006C41A9 /* Sources */,
 				2733E4621C631A81006C41A9 /* Frameworks */,
 				2733E4631C631A81006C41A9 /* Resources */,
-				F93A95748033C50942CEF808 /* Embed Pods Frameworks */,
-				D9182FED8963B00D723ED0FE /* Copy Pods Resources */,
+				F93A95748033C50942CEF808 /* [CP] Embed Pods Frameworks */,
+				D9182FED8963B00D723ED0FE /* [CP] Copy Pods Resources */,
 				2776BC251C742D8E00441968 /* Embed App Extensions */,
 			);
 			buildRules = (
@@ -335,12 +335,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2776BC241C742D8E00441968 /* Build configuration list for PBXNativeTarget "Sentiment-Analysis-Highlight-Action" */;
 			buildPhases = (
-				BB17E6768DF40787E3E51987 /* Check Pods Manifest.lock */,
+				BB17E6768DF40787E3E51987 /* [CP] Check Pods Manifest.lock */,
 				2776BC141C742D8E00441968 /* Sources */,
 				2776BC151C742D8E00441968 /* Frameworks */,
 				2776BC161C742D8E00441968 /* Resources */,
-				47081E4943BE2710DD1D33CE /* Embed Pods Frameworks */,
-				063913D83370DC7ADD026B57 /* Copy Pods Resources */,
+				063913D83370DC7ADD026B57 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -358,14 +357,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Kyle Weiner";
 				TargetAttributes = {
 					2733E4641C631A81006C41A9 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 					2776BC171C742D8E00441968 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -411,14 +412,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		063913D83370DC7ADD026B57 /* Copy Pods Resources */ = {
+		063913D83370DC7ADD026B57 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,59 +427,44 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sentiment-Analysis-Highlight-Action/Pods-Sentiment-Analysis-Highlight-Action-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		47081E4943BE2710DD1D33CE /* Embed Pods Frameworks */ = {
+		90D591B9CC1C0C41B2FD4FCB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sentiment-Analysis-Highlight-Action/Pods-Sentiment-Analysis-Highlight-Action-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		90D591B9CC1C0C41B2FD4FCB /* Check Pods Manifest.lock */ = {
+		BB17E6768DF40787E3E51987 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		BB17E6768DF40787E3E51987 /* Check Pods Manifest.lock */ = {
+		D9182FED8963B00D723ED0FE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		D9182FED8963B00D723ED0FE /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,14 +472,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sentiment-Analysis/Pods-Sentiment-Analysis-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F93A95748033C50942CEF808 /* Embed Pods Frameworks */ = {
+		F93A95748033C50942CEF808 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,7 +496,6 @@
 			files = (
 				2733E48E1C632A64006C41A9 /* SentimentAnalysisViewController.swift in Sources */,
 				273805281C63814E0002C222 /* AppConfig.swift in Sources */,
-				2733E4971C633A25006C41A9 /* UIColor+CustomColors.swift in Sources */,
 				2738052F1C638BEB0002C222 /* SentimentType.swift in Sources */,
 				2738051F1C63722C0002C222 /* SentimentAnalysisFooterView.swift in Sources */,
 				2779C9E81C648CA8006DE31C /* SentimentAnalysisHeaderView+SentimentHelper.swift in Sources */,
@@ -520,6 +505,7 @@
 				2733E4991C63464B006C41A9 /* SentimentAnalysisTextView.swift in Sources */,
 				2738052E1C638BEB0002C222 /* SentimentAnalysisRequest.swift in Sources */,
 				273805311C6398AB0002C222 /* SentimentType+Helper.swift in Sources */,
+				274126421DA4D2640052F33A /* AppColor.swift in Sources */,
 				273805261C6379110002C222 /* TouchAnimatable.swift in Sources */,
 				273805331C63A0810002C222 /* SentimentAnalysisFooterView+SentimentHelper.swift in Sources */,
 				273805211C6377D30002C222 /* AppButton.swift in Sources */,
@@ -531,8 +517,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2776BC5B1C747F6900441968 /* SentimentAnalysisRequest.swift in Sources */,
+				274126431DA4D2640052F33A /* AppColor.swift in Sources */,
 				27E9BCAC1C754D1100577141 /* UIColor+Hex.swift in Sources */,
-				2776BC5A1C7471AE00441968 /* UIColor+CustomColors.swift in Sources */,
 				2776BC281C74632C00441968 /* AppConfig.swift in Sources */,
 				27E9BCAE1C754D1100577141 /* ActionRequestHandler.swift in Sources */,
 			);
@@ -583,8 +569,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -627,8 +615,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -647,6 +637,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -660,6 +651,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyleweiner.Sentiment-Analysis";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -672,6 +664,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyleweiner.Sentiment-Analysis";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -685,6 +678,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyleweiner.Sentiment-Analysis.Sentiment-Analysis-Highlight-Action";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -698,6 +692,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyleweiner.Sentiment-Analysis.Sentiment-Analysis-Highlight-Action";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
